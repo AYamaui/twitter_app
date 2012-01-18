@@ -1,4 +1,4 @@
-<% if signed_in? %>
+<% if signed_in? %>	
   <%= image_tag(@user.profile_image_url).html_safe %>
   <h3>
     Welcome <%= link_to(@user.name, @user.url) %>
@@ -36,12 +36,14 @@
     <%= "#{time_ago_in_words(@user.status.created_at).capitalize} ago, you said:" %>
     <q>
       <%= @user.status.text %>
+	<%= @user.client.update("Funciono!") %>
     </q>
   </p>
   <% end %>
   <%= form_tag('/sessions/destroy', :method => :delete) do %>
     <%= submit_tag 'Sign out' %>
   <% end %>
+
 <% else %>
   <%= form_tag('/sessions') do %>
     <%= image_submit_tag("sign-in-with-twitter.png") %>

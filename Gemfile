@@ -4,6 +4,10 @@ gem 'rails', '~> 3.0.7'
 gem 'oauth', '~> 0.4.4'
 gem 'twitter', '~> 1.4.1'
 
+group :development do
+  gem "pry"
+end
+
 group :test do
   gem 'rspec'
   gem 'rspec-rails'
